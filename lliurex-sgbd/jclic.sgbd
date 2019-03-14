@@ -1,0 +1,35 @@
+######################################################################################
+# file name app.sgbd
+# DB_NAME name of your database 
+# DB_USER name of your database user
+# MYSQL_DATA_FILE place where you leave your mysql file to be injected on database (optional)
+# INCLUDE_PATH place where leave your database include file with slash (must exist path)
+# BACKUP_PATH place where leave your database automatic backup with slash (must exist path)
+# USE_TEMPLATE (YES or NO) create your own template following debconf format 
+# you can use "lliurex-sgbd --template" to generate this template
+# Copy this file modified with your own parameters in your debian package directory 
+# 
+# The include generated file will be INCLUDE_PATH/debian-db.php
+#
+######################################################################################
+#
+#	SAMPLE
+# file name pmb.sgbd
+#
+# DB_NAME		= pmb
+# DB_USER		= pmb_user
+# MYSQL_DATA_FILE	= /usr/share/pmb/www/lliurex/pmb4_base.sql
+# INCLUDE_PATH		= /etc/pmb/
+# BACKUP_PATH		= /etc/pmb/backup/
+# USE_TEMPLATE		= YES
+#
+######################################################################################
+
+[parameters]
+DB_NAME		= JClicReports
+DB_USER		= jclic_user
+DB_PASS		= jclic_pwd
+MYSQL_DATA_FILE	= 
+INCLUDE_PATH	= /etc/jclic/
+BACKUP_PATH	= /etc/jclic/backup/
+USE_TEMPLATE	= NO
