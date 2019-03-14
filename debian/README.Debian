@@ -1,0 +1,21 @@
+jclic for Debian
+----------------
+Please note that JClic needs Sun Java.
+
+In that case you might get ugly errors at starting JClic if you have
+another Java runtime engine than the Sun JVM set as your default Java
+virtual machine. This can easily be changed by running
+
+	# update-alternatives --config java
+
+as root and explicitly choosing Sun Java there.
+
+
+
+On the other hand, even if the sources include them, this package does not include jclic applet 
+and reports web application. They are not compiled neither signed to be used
+in a web environment.
+
+
+
+ -- José L. Redrejo <jredrejo@debian.org>, Fri, 11 Jan 2008 10:57:10 +0100
