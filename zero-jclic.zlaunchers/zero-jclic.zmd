@@ -1,0 +1,89 @@
+#!/bin/bash
+
+export TEXTDOMAIN="zero-jclic"
+export DEBIAN_FRONTEND="noninteractive"
+MSG_ERROR_MYSQL=$(gettext "You must install and run mysql")
+MSG_NOCONFIGURE=$(gettext "Leaving unconfigured")
+MSG_PASSWD=$(gettext "Administrator password for Jclic Reports: /etc/lliurex-sgbd/jclic.sgbd")
+
+PACKAGE="lliurex-sgbd"
+
+
+function test_install {
+		#Testeamos si el paquete esta instalado, no haciendo nada en el caso afirmativo o instalandolo en el caso negativo.
+		TEST=$( dpkg-query -s $1 2> /dev/null| grep Status | cut -d " " -f 4 )
+		if [ "$TEST" = 'installed' ]; then
+			echo "Package $1 already installed, we have to uninstall it"
+			notify-send -t 2000 -u critical -i /usr/share/icons/lliurex-neu/scalable/apps/zero-center.svg 'Zero-Installer' "$1 is already installed in your system, now we are goig to remove it and install it again."
+			zero-installer remove $1
+		fi
+
+	}
+
+
+
+##############################MAIN###########################
+
+zero-center add-pulsating-color zero-jclic
+
+(
+echo "# Updating Repositories...."
+zero-repos-update
+echo "20"
+echo "Testing if package was installed in your system"
+test_install "$PACKAGE"
+echo "30"
+echo "# Installing lliurex-sgbd...."
+zero-installer install "$PACKAGE"
+
+
+
+if [ $? -ne 0 ]; then
+	zenity --info --text="$MSG_NOCONFIGURE"
+	zero-center remove-pulsating-color zero-jclic
+	exit 0
+fi
+
+#Testear el mysql
+echo "40"
+echo "# Testing mysql...."
+RESULT=$(mysql_root_passwd -a)
+if [ "$RESULT" = "NO" ]; then
+	zenity --error --text "$MSG_ERROR_MYSQL"
+	zero-center remove-pulsating-color zero-jclic
+	exit 0
+fi
+
+#Inicializar mysql
+echo "60"
+echo "# Customing mysql....."
+mysql_root_passwd -i
+
+#Crear la base de datos y el usuario, si no existe
+resp=$(lliurex-sgbd --db_is_present jclic )
+if [ "$resp" = "NO" ] ; then
+	lliurex-sgbd --install jclic
+else
+	lliurex-sgbd --upgrade jclic
+fi
+
+#Crear un fichero de inicialización
+echo "80"
+echo "# Executing last scripts......."
+touch /etc/.jclic.conf
+cat > /etc/.jclic.conf << EOF
+********************************************* 
+Creado al configurar con zero-center el jclic 
+*********************************************
+EOF
+sleep 1
+) | zenity --progress --title="Jclic Report Server" --percentage=0 --auto-close --auto-kill --width="500" --no-cancel
+
+
+zenity --warning --text="$MSG_PASSWD" &
+
+#Deshabilitar después de configurar
+zero-center remove-pulsating-color zero-jclic
+zero-center set-configured zero-jclic
+
+exit 0
