@@ -8,7 +8,7 @@ Standards-Version: 4.1.2
 
 Package: zero-jclic-reports
 Architecture: all
-Depends: jclic, ${misc:Depends}
+Depends: jclic, ${misc:Depends}, lliurex-sgbd
 Enhances: lliurex-sgbd
 Description: Configuration for jclic-reportserver
  Configuration for jclic-reportserver on classroom
