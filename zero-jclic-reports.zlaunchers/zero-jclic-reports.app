@@ -1,5 +1,5 @@
 Name=zero-jclic
-Name[en]=zero-jclic
+Name[en]=zero-jclic-reports
 Name[es]=Configuracion del Jclic Reportserver
 Name[qcv]=Configuraciò del Jclic Reportserver
 Name[ca]=Configuraciò del Jclic Reportserver
@@ -10,7 +10,7 @@ Comment[qcv]=Configuraciò del servidor de informes de Jclic
 Comment[ca]=Configuraciò del servidor de informes de Jclic
 Icon=jclic
 Category=Services
-ScriptPath=zero-jclic.zmd
+ScriptPath=zero-jclic-reports.zmd
 Groups=adm;admins;teachers
 Using=pkexec
 Service=True
