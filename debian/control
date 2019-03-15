@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Homepage: http://clic.xtec.net/en/jclic/index.htm
 Maintainer: José L. Redrejo Rodríguez <jredrejo@debian.org>
-Build-Depends: debhelper (>= 5.0.51), zero-dev,llxsrchelper
+Build-Depends: debhelper (>= 5.0.51), zero-dev,llxsrchelper,python3-poinstaller
 Standards-Version: 4.1.2
 
 Package: zero-jclic-reports
