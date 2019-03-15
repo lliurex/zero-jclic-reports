@@ -1,3 +1,9 @@
+zero-jclic-reports (0.5) bionic; urgency=medium
+
+  * Epi port
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Fri, 15 Mar 2019 12:28:20 +0100
+
 zero-jclic-reports (0.4) bionic; urgency=medium
 
   * Bionic release
