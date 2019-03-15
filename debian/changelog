@@ -1,6 +1,7 @@
 zero-jclic-reports (0.4) bionic; urgency=medium
 
   * Bionic release
-  * Only zomando
+  * This packages only includes the jclicreports zomando
+  * TODO: redo the whole thing
 
  -- Juanma Navarro Mañez <juanma1980@gmail.com>  Thu, 14 Mar 2019 13:41:13 +0100
