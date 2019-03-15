@@ -1,4 +1,4 @@
-Name=zero-jclic
+Name=zero-jclic-reports
 Name[en]=zero-jclic-reports
 Name[es]=Configuracion del Jclic Reportserver
 Name[qcv]=Configuraciò del Jclic Reportserver
@@ -15,4 +15,4 @@ Groups=adm;admins;teachers
 Using=pkexec
 Service=True
 Modal=True
-Locks=zero-jclic
+Locks=zero-jclic-reports

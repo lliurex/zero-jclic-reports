@@ -2,7 +2,3 @@
 #set -x
 epi-gtk /usr/share/zero-jclic-reports/jclic-reports.epi
 
-
-
-
-
