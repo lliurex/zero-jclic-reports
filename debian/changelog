@@ -1,3 +1,9 @@
+zero-jclic-reports (0.5.2) bionic; urgency=medium
+
+  * Adding sudo group
+
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Mon, 01 Apr 2019 08:53:29 +0200
+
 zero-jclic-reports (0.5.1) bionic; urgency=medium
 
   * Epi port
