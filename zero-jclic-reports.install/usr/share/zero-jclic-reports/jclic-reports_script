@@ -4,8 +4,21 @@ MSG_ERROR_MYSQL=$(gettext "You must install and run mysql")
 
 ACTION="$1"
 PKG="$2"
+PKG_REPORTS="jclicreports"
 
 case $ACTION in
+
+	preInstall)
+                apt-get install $PKG_REPORTS
+		if dpkg-query -W -f'${Status}' $PKG_REPORTS 2>/dev/null | grep -q "ok installed" ;
+			then 
+				echo "Installed, continue.....";
+			else 
+				echo "You need jclicreports package installed in your system";
+				echo "Please contact with your administator system and solve this problem.";
+				exit 1
+		fi
+        ;;
 
 	installPackage)
 		#Testear el mysql
