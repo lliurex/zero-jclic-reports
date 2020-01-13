@@ -4,11 +4,25 @@ MSG_ERROR_MYSQL=$(gettext "You must install and run mysql")
 
 ACTION="$1"
 PKG="$2"
+PKG_REPORTS="jclicreports"
 
 case $ACTION in
 
+	preInstall)
+                apt-get install $PKG_REPORTS
+		if dpkg-query -W -f'${Status}' $PKG_REPORTS 2>/dev/null | grep -q "ok installed" ;
+			then 
+				echo "Installed, continue.....";
+			else 
+				echo "You need jclicreports package installed in your system";
+				echo "Please contact with your administator system and solve this problem.";
+				exit 1
+		fi
+        ;;
+
 	installPackage)
 		#Testear el mysql
+		echo "40"
 		echo "# Testing mysql...."
 		RESULT=$(mysql_root_passwd -a)
 		if [ "$RESULT" = "NO" ]; then
@@ -18,6 +32,7 @@ case $ACTION in
 		fi
 
 		#Inicializar mysql
+		echo "60"
 		echo "# Customing mysql....."
 		mysql_root_passwd -i
 		
@@ -28,8 +43,17 @@ case $ACTION in
 		else
 			lliurex-sgbd --upgrade jclic
 		fi
+	
+		#Crear un fichero de inicialización
+		echo "80"
+		echo "# Executing last scripts......."
+		touch /etc/.jclic.conf
+		cat > /etc/.jclic.conf << EOF
+		********************************************* 
+		Creado al configurar con zero-center el jclic 
+		*********************************************
+		EOF
 
-		echo "# Jclic reports configured"
 	;;
 		
 esac
