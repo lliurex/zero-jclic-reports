@@ -4,7 +4,7 @@ MSG_ERROR_MYSQL=$(gettext "You must install and run mysql")
 
 ACTION="$1"
 PKG="$2"
-PKG_REPORTS="jclicreports"
+PKG_REPORTS="jclic-reports"
 
 case $ACTION in
 
