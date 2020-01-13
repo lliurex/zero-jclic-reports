@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Equipo LliureX <lliurex@gva.es>
 Homepage: http://clic.xtec.net/en/jclic/index.htm
-Build-Depends: debhelper (>= 10), zero-dev,llxsrchelper,python3-poinstaller
+Build-Depends: debhelper (>= 11), zero-dev,llxsrchelper,python3-poinstaller
 Standards-Version: 4.1.2
 
 Package: zero-jclic-reports
