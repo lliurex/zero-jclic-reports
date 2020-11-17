@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+<id>zero-jclic-reports_zmd</id>
+<metadata_license>CC0-1.0</metadata_license>
+<name>zero-jclic</name>
+<name xml:lang="en">zero-jclic-reports</name>
+<name xml:lang="es">Configuracion del Jclic Reportserver</name>
+<name xml:lang="qcv">Configuraciò del Jclic Reportserver</name>
+<name xml:lang="ca">Configuraciò del Jclic Reportserver</name>
+<summary>Client Configuration of Jclic Reportserver</summary>
+<summary xml:lang="en">Client Configuration of Jclic Reportserver</summary>
+<summary xml:lang="es">Configuración del servidor de informes de Jclic</summary>
+<summary xml:lang="qcv">Configuraciò del servidor de informes de Jclic</summary>
+<summary xml:lang="ca">Configuraciò del servidor de informes de Jclic</summary>
+<description>
+<p>Client Configuration of Jclic Reportserver</p>
+<p xml:lang="en">Client Configuration of Jclic Reportserver</p>
+<p xml:lang="es">Configuración del servidor de informes de Jclic</p>
+<p xml:lang="qcv">Configuraciò del servidor de informes de Jclic</p>
+<p xml:lang="ca">Configuraciò del servidor de informes de Jclic</p>
+</description>
+<categories>
+<category>Lliurex</category>
+<category>Zomando</category>
+<category>Utility</category>
+</categories>
+<icon type="cached">jclicreports</icon>
+
+<keywords>
+<keyword>zero</keyword>
+<keyword>jclic</keyword>
+<keyword>reports</keyword>
+<keyword>zero-jclic</keyword>
+<keyword>Zomando</keyword>
+</keywords>
+<keywords xml:lang="en">
+<keyword>zero-jclic-reports</keyword>
+<keyword>Zomando</keyword>
+</keywords>
+<keywords xml:lang="es">
+<keyword>Configuracion</keyword>
+<keyword>del</keyword>
+<keyword>Jclic</keyword>
+<keyword>Reportserver</keyword>
+<keyword>Zomando</keyword>
+</keywords>
+<keywords xml:lang="qcv">
+<keyword>Configuraciò</keyword>
+<keyword>Zomando</keyword>
+</keywords>
+<keywords xml:lang="ca">
+<keyword>Zomando</keyword>
+
+</keywords>
+</component>
