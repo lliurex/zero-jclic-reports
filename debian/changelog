@@ -1,3 +1,9 @@
+zero-jclic-reports (0.5.3.2) focal; urgency=medium
+
+  * Firs Focal release 
+
+ -- Juanma1980 <juanma1980@gmail.com>  Mon, 10 May 2021 16:10:00 +0200
+
 zero-jclic-reports (0.5.3.1) bionic; urgency=medium
 
   * Fix package metadata
