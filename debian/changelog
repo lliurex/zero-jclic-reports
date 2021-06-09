@@ -1,3 +1,9 @@
+zero-jclic-reports (0.5.3.2) bionic; urgency=medium
+
+  * Forced installation in epi script
+  
+ -- Juan Ramon Pelegrina <juapesai@hotmail.com>  Wed, 09 Jun 2021 18:13:01 +0200
+
 zero-jclic-reports (0.5.3.1) bionic; urgency=medium
 
   * Fix package metadata
